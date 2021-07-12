@@ -13,13 +13,13 @@ namespace StarChart.Data
         {
         }
 
-        public CelestialObject GetById(int id)
+        public CelestialObject GetByIdWithSatellites(int id)
         {
             var star = Find<CelestialObject>(id);
             return AddSatellites(star);
         }
         
-        public List<CelestialObject> GetByName(string name)
+        public List<CelestialObject> GetByNameWithSatellites(string name)
         {
             var query = from s in CelestialObjects
                        where s.Name == name
@@ -32,7 +32,7 @@ namespace StarChart.Data
             return stars;
         }
 
-        public List<CelestialObject> GetAll()
+        public List<CelestialObject> GetAllWithSatellites()
         {
             var allStars = CelestialObjects.ToList();
             foreach (var s in allStars)
