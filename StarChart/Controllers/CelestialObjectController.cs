@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using StarChart.Data;
 using StarChart.Models;
@@ -52,7 +49,7 @@ namespace StarChart.Controllers
         {
             _context.CelestialObjects.Add(star);
             _context.SaveChanges();
-            return CreatedAtRoute("GetById", new { id=star.Id }, star);
+            return CreatedAtRoute("GetById", new { id = star.Id }, star);
         }
 
         [HttpPut("{id}")]

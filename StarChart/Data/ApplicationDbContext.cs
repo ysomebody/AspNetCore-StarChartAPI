@@ -13,6 +13,12 @@ namespace StarChart.Data
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=CelestialData";
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+
         public CelestialObject GetByIdWithSatellites(int id)
         {
             var star = Find<CelestialObject>(id);
